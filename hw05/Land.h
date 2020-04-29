@@ -8,8 +8,9 @@ class Land{
 
 class Desert:public Land{
   string printLand(){
-    cout << "You walk through the hot and dry desert" << endl;
-    return ""; // NOTE Return string
+    // cout << "You walk through the hot and dry desert" << endl;
+    return"You walk through the hot and dry desert";
+    // return ""; // NOTE Return string
   };
   void visit(Player& obj){
     obj.setEnergy(-2);
@@ -19,8 +20,7 @@ class Desert:public Land{
 
   class Forest:public Land{
     string printLand(){
-      cout << "You trek through the dense forest" << endl;
-      return "";
+      return "You trek through the dense forest";
     };
     void visit(Player& obj){
       obj.setEnergy(-1);
@@ -30,8 +30,7 @@ class Desert:public Land{
 
     class Orchard:public Land{
       string printLand(){
-        cout << "You eat an apple in the orchard" << endl;
-        return "";
+        return "You eat an apple in the orchard";
       };
       void visit(Player& obj){
         obj.setEnergy(2);
@@ -41,18 +40,15 @@ class Desert:public Land{
 
       class Lake:public Land{
         string printLand(){
-          cout << "You are hydrated" << endl;
-          return "";
+          return "You are hydrated";
         };
         void visit(Player& obj){
           obj.setEnergy(1);
         }
         };
-      
     class Ruins: public Land{
       string printLand(){
-        cout << "You hear electronic noise nearby" << endl;
-        return "";
+        return"You hear electronic noise nearby";
       };
       void visit(Player& obj){
         obj.setTreasureFound(true);
