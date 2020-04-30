@@ -2,6 +2,12 @@
 
 int Player::mapDim = 10; // NOTE why did we initialize
 
+Player::Player(){
+    x = mapDim/2;
+    y = mapDim/2;
+    energylevel=mapDim/2;
+    treasure = false;
+  }
 int Player::getDimension(){
     return mapDim;
   }
@@ -36,18 +42,21 @@ int Player:: getEnergy(){
   void Player:: moveN(){
     if(y+1 <= getDimension()-1){
         y += 1;
+        setY(y);
   }
   }
 
  void Player:: moveE(){
    if(x+1 <= getDimension()-1){
         x += 1;
+        setX(x);
     }
   }
 
   void Player:: moveS(){
     if(y-1 >= 0){
         y -= 1;
+        setY(y);
   }
   }
 
@@ -56,6 +65,7 @@ int Player:: getEnergy(){
   void Player:: moveW(){
    if(x-1 >= 0){
         x -= 1;
+        setX(x);
     }
 
 

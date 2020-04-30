@@ -46,29 +46,30 @@ delete map[xPlay][yPlay];
 map[xPlay][yPlay] = new Ruins;
 
 while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false ){
+  cout << obj.getX() << ", " << obj.getY() << endl;
   cout << "You see," << endl;
     if(yPlay == Player::getDimension()-1){
             cout << "the north border" << endl;
         }else{
-      cout << map[xPlay][yPlay+1]->printLand() << "North" << endl;
+      cout << map[obj.getX()][obj.getY()+1]->printLand() << "North" << endl;
         }
 
         if(yPlay == 0){
             cout << "the south border" << endl;
         }else{
-          cout << map[xPlay][yPlay-1]->printLand() << "South" << endl;
+          cout << map[obj.getX()][obj.getY()-1]->printLand() << "South" << endl;
         }
 
         if(xPlay == Player::getDimension()-1){ 
             cout << "the east border" << endl;
         }else{
-          cout << map[xPlay+1][yPlay]->printLand() << "East" << endl;
+          cout << map[obj.getX()+1][obj.getY()]->printLand() << "East" << endl;
         }
 
         if(xPlay == 0){
             cout << "the west border" << endl;
         }else{
-          cout << map[xPlay-1][yPlay]->printLand() << "West" << endl;
+          cout << map[obj.getX()-1][obj.getY()]->printLand() << "West" << endl;
         }
 
 
@@ -80,6 +81,7 @@ while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false )
 
         if(input == "North"){
           obj.moveN();
+          
         }
         else if (input == "West")
         {
@@ -95,6 +97,7 @@ while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false )
         else{
           cout << "You input " << input << endl;
         }
+        cout << obj.getX() << ", " << obj.getY() << endl;
 
         if(input == "QUIT"){
           cout <<"You are now quitting the game" << endl;
