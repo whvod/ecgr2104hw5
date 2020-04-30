@@ -45,31 +45,34 @@ while ( (xPlay == obj.getX()) && (yPlay == obj.getY()) ){
 delete map[xPlay][yPlay];
 map[xPlay][yPlay] = new Ruins;
 
-// TODO Check logic
 while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false ){
-    if(yPlay >= Player::getDimension()-1){
-            cout << "In the north" << endl;
+  cout << "You see," << endl;
+    if(yPlay == Player::getDimension()-1){
+            cout << "the north border" << endl;
         }else{
-            map[xPlay][yPlay+1]->printLand();
+      cout << map[xPlay][yPlay+1]->printLand() << "North" << endl;
         }
 
-        if(yPlay >= Player::getDimension()-1){
-            cout << "In the south" << endl;
+        if(yPlay == 0){
+            cout << "the south border" << endl;
         }else{
-            map[xPlay+1][yPlay]->printLand();
+          cout << map[xPlay][yPlay-1]->printLand() << "South" << endl;
         }
 
-        if(xPlay >= Player::getDimension()-1){ 
-            cout << "In the east" << endl;
+        if(xPlay == Player::getDimension()-1){ 
+            cout << "the east border" << endl;
         }else{
-            map[xPlay+1][yPlay]->printLand();
+          cout << map[xPlay+1][yPlay]->printLand() << "East" << endl;
         }
 
-        if(xPlay >= Player::getDimension()-1){
-            cout << "In the west" << endl;
+        if(xPlay == 0){
+            cout << "the west border" << endl;
         }else{
-            map[xPlay+1][yPlay]->printLand();
+          cout << map[xPlay-1][yPlay]->printLand() << "West" << endl;
         }
+
+
+        // }
 
         cout << "Would you like to go North, South, East or West?" << endl;
         cin >> input;
@@ -90,7 +93,7 @@ while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false )
           obj.moveE();
         }
         else{
-          cout << "Inv input" << endl;
+          cout << "You input " << input << endl;
         }
 
         if(input == "QUIT"){
@@ -101,6 +104,12 @@ while(obj.getEnergy() > 0 && input != "QUIT" && obj.isTreasureFound() == false )
           map[obj.getX()][obj.getY()]->visit(obj);
         }
 
-        if(obj.getEnergy() == 0){cout << "You ran out of energy, end of game." << endl;}
-    }
+        if(obj.getEnergy() == 0){
+          cout << "You ran out of energy, end of game." << endl;
+        }
+        else{
+          cout << "Current energy level is " << obj.getEnergy() << endl;
+        }
+ }
 }
+    // }

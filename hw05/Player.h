@@ -16,7 +16,7 @@ public:
     y = mapDim/2;
     energylevel=mapDim/2;
     treasure = false;
-    // mapDim=10;
+    // mapDim=10; //NOTE overridden, do not initialize static in Class w
   }
   static int getDimension();
   //void setDim(int g);

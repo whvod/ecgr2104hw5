@@ -1,6 +1,6 @@
 #include "Player.h"
 
-int Player::mapDim = 10;
+int Player::mapDim = 10; // NOTE why did we initialize
 
 int Player::getDimension(){
     return mapDim;
@@ -9,8 +9,7 @@ int Player::getDimension(){
   //  mapDim = g;
 //}
 int Player:: getEnergy(){
-    cout << "energy level is: " << energylevel << endl;
-    return energylevel;
+  return energylevel;
   }
   void Player::setEnergy(int n){
     energylevel += n;
